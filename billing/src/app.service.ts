@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { OrderCreatedEvent } from './order-created.event';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  async handleOrderCreatedEvent(data: OrderCreatedEvent) {
+    console.log('Service: Received event: ', data);
   }
 }
